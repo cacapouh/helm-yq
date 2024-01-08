@@ -769,9 +769,21 @@ spec:
 
 ### helm template, yq
 
+prefix-$index:
+
 ```
 $ helm template ingress-nginx/ingress-nginx | yq -s '"prefix-" + $index'
 $ ls
 prefix-0.yml    prefix-10.yml   prefix-12.yml   prefix-14.yml   prefix-16.yml   prefix-2.yml    prefix-4.yml    prefix-6.yml    prefix-8.yml
 prefix-1.yml    prefix-11.yml   prefix-13.yml   prefix-15.yml   prefix-17.yml   prefix-3.yml    prefix-5.yml    prefix-7.yml    prefix-9.yml
+```
+
+
+```
+$ helm template ingress-nginx/ingress-nginx | yq -s '.kind + "-" + $index'
+$ ls
+ClusterRole-12.yml                      ConfigMap-1.yml                         Job-17.yml                              RoleBinding-5.yml                       ServiceAccount-11.yml
+ClusterRole-2.yml                       Deployment-8.yml                        Role-14.yml                             Service-6.yml                           ValidatingWebhookConfiguration-10.yml
+ClusterRoleBinding-13.yml               IngressClass-9.yml                      Role-4.yml                              Service-7.yml
+ClusterRoleBinding-3.yml                Job-16.yml 
 ```
