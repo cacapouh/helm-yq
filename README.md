@@ -1,3 +1,5 @@
+https://github.com/helm/helm/issues/4680#issuecomment-1468229115
+
 ### yqのインストール
 
 ```shell
