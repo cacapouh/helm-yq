@@ -769,7 +769,6 @@ spec:
 
 ### helm template, yq
 
-prefix-$index:
 
 ```
 $ helm template ingress-nginx/ingress-nginx | yq -s '"prefix-" + $index'
